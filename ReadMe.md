@@ -5,17 +5,21 @@ This is a simple implementation of the game in python with additional features l
 
 ## How to install
 
-First of all make sure the requirements mentioned [here](requirements.txt) are installed on the the system.
+First of all make sure the requirements mentioned [here](requirements.txt) are installed on the the system by running the following command:
+```
+pip3 install -r requirements.txt
+```
 
+The follow the steps below to clone the repository and run the game:
 1. Clone the repository
 ```
 git clone https://github.com/ChiragAgg5k/zero-code.git
 ```
-2. Change the directory to the source code directory
+1. Change the directory to the source code directory
 ```
 cd zero-cross/src
 ```
-3. Run the python script
+1. Run the python script
 ```
 python3 -u main.py
 ```
