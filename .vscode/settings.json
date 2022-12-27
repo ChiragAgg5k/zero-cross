@@ -1,4 +1,5 @@
 {
-    "python.defaultFormatter": "black",
-    "background.enabled": false,
+    "python.languageServer": "Pylance",
+    "python.formatting.provider": "black",
+    "vsintellicode.python.completionsEnabled": true
 }

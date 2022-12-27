@@ -136,7 +136,22 @@ class Options:
 
         self.top.geometry(f"{self.op_width}x{self.op_height}+{x_coord}+{y_coord}")
 
-    def display_options(self):
-        self.op_center_window()
+    def change_theme(self, new_theme: str):
+        ctk.set_appearance_mode(new_theme)
+        self.top.update()
+
+    def display_options(
+        self,
+    ):
+        print("Options Displayed")
         self.top.title("Options")
+        self.op_center_window()
+
+        self.theme_options = ctk.CTkOptionMenu(
+            self.top,
+            values=["Dark", "Light", "System"],
+            command=self.change_theme,
+        )
+
+        self.theme_options.pack(padx=10, pady=10)
         self.top.mainloop()

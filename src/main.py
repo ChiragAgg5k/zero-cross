@@ -10,21 +10,19 @@ main_menu.display_menu(title="Zero-Cross")
 database = database.Database()
 database.createDatabase(name="player_info.db")
 
+# initialize board
+board = board.Board()
+
 # Displays main menu till the name button is pressed.
 while main_menu.name_button_pressed == False:
     main_menu.root.update()
 else:
     if main_menu.player_name is not None:
-        player_name = main_menu.player_name
-        score = 0
-        try:
-            database.cur.execute(
-                f"INSERT INTO scores(user_name,score) VALUES(?,?)", (player_name, score)
-            )
-        except sqlite3.IntegrityError:
-            print("Username already exists")
+        database.add_user(user_name=main_menu.player_name, score=0)
     else:
         pass
+
+board.display_board()
 
 
 database.cur.execute("SELECT * FROM scores")
