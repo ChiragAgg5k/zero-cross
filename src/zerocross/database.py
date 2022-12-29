@@ -10,6 +10,8 @@ class Database:
 
         try:
             self.conn = sqlite3.connect(f"src/data/{self.name}")
+            self.cur = self.conn.cursor()
+
             print("Database created successfully")
         except Exception as e:
             print("Error while creating database:", e)
